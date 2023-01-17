@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "760301518777",
+    "project_id": "flutter-push-notificatio-74720",
+    "storage_bucket": "flutter-push-notificatio-74720.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:760301518777:android:6260e4fe09f441387e8068",
+        "android_client_info": {
+          "package_name": "com.example.firebaseseries"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "760301518777-aq443vv1blfjetial9kkmku703ti1nre.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1_oGWv7_74IovdYQZpgv6W_plO2gobMw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "760301518777-aq443vv1blfjetial9kkmku703ti1nre.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "760301518777-djqara5q72v6tg2eums8apgchkp9uu5e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterFirebasePushnotification"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:760301518777:android:408d716f8405a2c87e8068",
+        "android_client_info": {
+          "package_name": "com.example.flutter_firebase_pushnotification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "760301518777-aq443vv1blfjetial9kkmku703ti1nre.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1_oGWv7_74IovdYQZpgv6W_plO2gobMw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "760301518777-aq443vv1blfjetial9kkmku703ti1nre.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "760301518777-djqara5q72v6tg2eums8apgchkp9uu5e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterFirebasePushnotification"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
