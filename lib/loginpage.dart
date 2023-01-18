@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebaseseries/LoginWithPhoneNumber.dart';
 import 'package:firebaseseries/databases/postscreen.dart';
 import 'package:firebaseseries/forgotpasswordscreen.dart';
 import 'package:firebaseseries/signupscreen.dart';
@@ -161,10 +162,10 @@ class _LoginPageState extends State<LoginPage> {
                   height: 30,
                 ),
                 InkWell(
-                  // onTap: (){
-                  //   Navigator.push(context,
-                  //       MaterialPageRoute(builder: (context) => LoginWithPhoneNumber()));
-                  // },
+                  onTap: (){
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => LoginWithPhoneNumber()));
+                  },
                   child: Container(
                     height: 50,
                     decoration: BoxDecoration(

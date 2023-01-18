@@ -4,6 +4,8 @@ import 'package:firebaseseries/loginpage.dart';
 import 'package:firebaseseries/signupscreen.dart';
 import 'package:flutter/material.dart';
 
+import 'LoginWithPhoneNumber.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.deepPurple),
-      home: const LoginPage(),
+      home: const LoginWithPhoneNumber(),
     );
   }
 }
