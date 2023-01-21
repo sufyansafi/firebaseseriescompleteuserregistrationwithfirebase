@@ -29,6 +29,7 @@ class _LoginWithPhoneNumberState extends State<LoginWithPhoneNumber> {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: TextFormField(
+                keyboardType: TextInputType.number,
                 controller: phonenumberController,
                 decoration: InputDecoration(
                   hintText: "+923135221088",
