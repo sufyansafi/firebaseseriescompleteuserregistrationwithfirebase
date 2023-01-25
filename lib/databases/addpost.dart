@@ -14,7 +14,8 @@ class Addpost extends StatefulWidget {
 
 class _AddpostState extends State<Addpost> {
   final postController = TextEditingController();
-  final database = FirebaseDatabase.instance.ref('post data in firebase relatime database');
+  final database =
+      FirebaseDatabase.instance.ref('post data in firebase relatime database');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,11 +37,12 @@ class _AddpostState extends State<Addpost> {
             RoundButton(
                 title: 'add',
                 onTap: () {
-                  database.child(DateTime.now().millisecondsSinceEpoch.toString()). set({
+                  String id = DateTime.now().millisecondsSinceEpoch.toString();
+                  database.child(id).set({
                     'Cgpa': 2.55,
-                  "description" :'successfully pass out from llu',
+                    "description": 'successfully pass out from llu',
                     "title": postController.text.toString(),
-                    "id":DateTime.now().millisecondsSinceEpoch.toString(),
+                    "id": id,
                   }).then((value) {
                     Util().toastMessage("post addaed success fully");
                   }).onError((error, stackTrace) {
