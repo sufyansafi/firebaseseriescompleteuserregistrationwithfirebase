@@ -1,5 +1,3 @@
-
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
@@ -17,6 +15,42 @@ class PostScreen extends StatefulWidget {
 }
 
 class _PostScreenState extends State<PostScreen> {
+  Future<void> showMyDialouge(String title, String id) async {
+    editcontroller.text = title;
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Update"),
+          content: SizedBox(
+            child: TextFormField(
+              controller: editcontroller,
+            ),
+          ),
+          actions: [
+            TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text("Cancel")),
+            TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                  refrence.child(id).update({
+                    'title': editcontroller.text.toLowerCase()
+                  }).then((value) {
+                    Util().toastMessage("post updates");
+                  }).onError((error, stackTrace) {
+                    Util().toastMessage(error.toString());
+                  });
+                },
+                child: Text("Update"))
+          ],
+        );
+      },
+    );
+  }
+
   final searchcontroller = TextEditingController();
   final editcontroller = TextEditingController();
   final auth = FirebaseAuth.instance;
@@ -99,15 +133,15 @@ class _PostScreenState extends State<PostScreen> {
                                 PopupMenuItem(
                                     value: 1,
                                     child: ListTile(
-                                      onTap: (() {
+                                      onTap: () {
                                         showMyDialouge(
                                             title,
                                             snapshot
-                                                .child("title")
+                                                .child('id')
                                                 .value
                                                 .toString());
                                         Navigator.pop(context);
-                                      }),
+                                      },
                                       leading: Icon(Icons.edit),
                                       title: Text("Edit"),
                                     )),
@@ -115,12 +149,13 @@ class _PostScreenState extends State<PostScreen> {
                                     value: 2,
                                     child: ListTile(
                                       onTap: () {
-                                        showMyDialouge(
-                                            title,
-                                            snapshot
-                                                .child("title")
+                                        Navigator.pop(context);
+                                        refrence
+                                            .child(snapshot
+                                                .child("id")
                                                 .value
-                                                .toString());
+                                                .toString())
+                                            .remove();
                                         Navigator.pop(context);
                                       },
                                       leading: Icon(Icons.delete),
@@ -158,43 +193,5 @@ class _PostScreenState extends State<PostScreen> {
             Icons.add,
           ),
         ));
-  }
-
-  Future<void> showMyDialouge(String title, String id) async {
-    editcontroller.text = title;
-    return showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text("Update"),
-          content: Container(
-            child: TextField(
-              controller: editcontroller,
-            ),
-          ),
-          actions: [
-            TextButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: Text("Cancel")),
-            TextButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                  refrence
-                      .child(id)
-                      .update({'title': editcontroller.text.toLowerCase()})
-                      .then((value) {
-                        Util().toastMessage("post updates");
-                      })
-                      .onError((error, stackTrace) {
-                        Util().toastMessage(error.toString());
-                      });
-                },
-                child: Text("Update"))
-          ],
-        );
-      },
-    );
   }
 }
