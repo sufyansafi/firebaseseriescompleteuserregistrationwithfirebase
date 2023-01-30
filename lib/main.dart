@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebaseseries/databases/addpost.dart';
 import 'package:firebaseseries/databases/postscreen.dart';
+import 'package:firebaseseries/firestore/addfirestoredata.dart';
 import 'package:firebaseseries/loginpage.dart';
 // import 'package:firebaseseries/loginpage.dart';
 import 'package:firebaseseries/signupscreen.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.deepPurple),
-      home: const PostScreen(),
+      home: const AddFireSTorDta(),
     );
   }
 }
