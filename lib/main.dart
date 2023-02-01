@@ -8,6 +8,7 @@ import 'package:firebaseseries/signupscreen.dart';
 import 'package:flutter/material.dart';
 
 import 'LoginWithPhoneNumber.dart';
+import 'firestore/forestorelistscreen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.deepPurple),
-      home: const AddFireSTorDta(),
+      home: FirestoreListScreen(),
     );
   }
 }

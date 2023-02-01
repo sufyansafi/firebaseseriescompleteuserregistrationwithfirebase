@@ -30,7 +30,8 @@ class _AddFireSTorDtaState extends State<AddFireSTorDta> {
               decoration: InputDecoration(hintText: "whAts In yOUr MinD????"),
             ),
             SizedBox(
-              height: 50,
+              height: 50, 
+              
             ),
             RoundButton(
                 title: 'add',

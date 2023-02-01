@@ -1,7 +1,6 @@
-import 'dart:html';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:firebaseseries/utils/utils.dart';
@@ -59,6 +58,7 @@ class _FirestoreListScreenState extends State<FirestoreListScreen> {
   final editcontroller = TextEditingController();
   final auth = FirebaseAuth.instance;
   final firestore = FirebaseFirestore.instance.collection("safi").snapshots();
+  final ref = FirebaseFirestore.instance.collection("safi");
   // final refrence =
   // FirebaseDatabase.instance.ref('post data in firebase relatime database');
   @override
@@ -96,7 +96,35 @@ class _FirestoreListScreenState extends State<FirestoreListScreen> {
                     child: ListView.builder(
                       itemBuilder: (context, index) {
                         return ListTile(
-                          title: Text(snapshot.data!.docs[index]['title'].toString() ) ,
+                          onTap: () {
+                            // ref
+                            //     .doc(
+                            //         snapshot.data!.docs[index]['id'].toString())
+                            //     .update({
+                            //   "title":
+                            //       'Mr : Sufyan Srafraz U are now Hire as a flutter developer'
+                            // }).then((value) {
+                            //   Util().toastMessage("Dtaa Update");
+                            // }).onError((error, stackTrace) {
+                            //   Util().toastMessage(error.toString());
+                            // });
+                            ref
+                                .doc(
+                                    snapshot.data!.docs[index]['id'].toString())
+                                .delete()
+                                .then((value) {
+                              Util().toastMessage("Dtaa delte");
+                            }).onError((error, stackTrace) {
+                              Util().toastMessage(error.toString());
+                            });
+                          },
+                          title: Text(
+                              snapshot.data!.docs[index]['title'].toString()),
+                          subtitle:
+                              Text(snapshot.data!.docs[index]['id'].toString()),
+                          trailing: Text(snapshot
+                              .data!.docs[index]['description']
+                              .toString()),
                         );
                       },
                       itemCount: snapshot.data!.docs.length,
