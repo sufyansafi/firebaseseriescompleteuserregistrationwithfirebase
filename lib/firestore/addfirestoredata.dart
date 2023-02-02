@@ -13,8 +13,11 @@ class AddFireSTorDta extends StatefulWidget {
 }
 
 class _AddFireSTorDtaState extends State<AddFireSTorDta> {
+
   final postController = TextEditingController();
-  final firestore = FirebaseFirestore.instance.collection("safi");
+
+  final firestore = FirebaseFirestore.instance.collection("Users");
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,8 +33,7 @@ class _AddFireSTorDtaState extends State<AddFireSTorDta> {
               decoration: InputDecoration(hintText: "whAts In yOUr MinD????"),
             ),
             SizedBox(
-              height: 50, 
-              
+              height: 50,
             ),
             RoundButton(
                 title: 'add',

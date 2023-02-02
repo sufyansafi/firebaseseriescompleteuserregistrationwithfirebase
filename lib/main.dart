@@ -1,4 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebaseseries/SPLASHSCREEN.dart';
 import 'package:firebaseseries/databases/addpost.dart';
 import 'package:firebaseseries/databases/postscreen.dart';
 import 'package:firebaseseries/firestore/addfirestoredata.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.deepPurple),
-      home: FirestoreListScreen(),
+      home: SplashScreen(),
     );
   }
 }
