@@ -39,7 +39,7 @@ class _SignupscreenState extends State<Signupscreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sign up'),
+        title: const Text('Sign up'),
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 100, right: 30, left: 30),
@@ -97,7 +97,10 @@ class _SignupscreenState extends State<Signupscreen> {
                     action: SnackBarAction(
                       label: 'Undo',
                       onPressed: () {
-                        // Some code to undo the change.
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const LoginPage()));
                       },
                     ),
                   );
@@ -130,15 +133,15 @@ class _SignupscreenState extends State<Signupscreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Already have an account?"),
+                  const Text("Already have an account?"),
                   TextButton(
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => LoginPage()));
+                                builder: (context) => const LoginPage()));
                       },
-                      child: Text('Login'))
+                      child: const Text('Login'))
                 ],
               )
             ],

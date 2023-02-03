@@ -19,7 +19,7 @@ class SplashServices {
       Timer(
           const Duration(seconds: 3),
           () => Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const UploadImageFireStore())));
+              MaterialPageRoute(builder: (context) => const LoginPage())));
     } else {
       Timer(
           const Duration(seconds: 3),

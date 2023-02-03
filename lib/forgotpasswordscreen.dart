@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebaseseries/utils/utils.dart';
 import 'package:firebaseseries/widgets/roundedbutton.dart';
 import 'package:flutter/material.dart';
 
@@ -34,13 +35,13 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               ),
             ),
             SizedBox(height: 40,),
-            // RoundButton(title: 'Forgot', onTap: (){
-            //   auth.sendPasswordResetEmail(email: emailController.text.toString()).then((value){
-            //     Utils().toastMessage('We have sent you email to recover password, please check email');
-            //   }).onError((error, stackTrace){
-            //     Utils().toastMessage(error.toString());
-            //   });
-            // })
+            RoundButton(title: 'Forgot', onTap: (){
+              auth.sendPasswordResetEmail(email: emailController.text.toString()).then((value){
+                Util().toastMessage('We have sent you email to recover password, please check email');
+              }).onError((error, stackTrace){
+                Util().toastMessage(error.toString());
+              });
+            })
           ],
         ),
       ),

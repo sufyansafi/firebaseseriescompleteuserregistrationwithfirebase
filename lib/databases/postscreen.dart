@@ -21,7 +21,7 @@ class _PostScreenState extends State<PostScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-           title: Text("Update"),
+          title: Text("Update"),
           content: SizedBox(
             child: TextFormField(
               controller: editcontroller,
